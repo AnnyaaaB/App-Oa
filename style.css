@@ -564,3 +564,19 @@ footer {
     text-align: center;
   }
 }
+
+/* Full-screen background for the app */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* ensures full height */
+}
+
+/* Fix background image on tablets/iPads */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .app-container {
+    background-size: cover;      /* fill the whole screen */
+    background-position: center; /* keep it centered */
+    background-attachment: scroll; /* avoid iOS Safari issues with fixed */
+  }
+}
