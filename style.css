@@ -476,3 +476,20 @@ footer {
 .chat-input{display:flex; gap:8px; margin-top:6px;}
 .chat-input input{flex:1;padding:10px;border-radius:10px;border:1px solid #eee;}
 .chat-input button{padding:10px 12px;border-radius:10px;border:none;background:var(--soft);font-weight:700;}
+
+
+/* Mobile layout (max-width: 600px) */
+@media (max-width: 600px) {
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 10px 20px; /* row gap, column gap */
+    justify-items: center; /* center the items in each column */
+    margin-top: 10px;
+  }
+
+  .nav-links li {
+    width: 100%; /* makes each link evenly spaced */
+    text-align: center;
+  }
+}
