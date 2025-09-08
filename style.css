@@ -507,3 +507,50 @@ footer {
     text-align: center;
   }
 }
+
+
+/* Hide hamburger by default (desktop) */
+.menu-toggle,
+.hamburger {
+  display: none;
+}
+
+/* Mobile & tablet layout */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #2c2c2c;
+    position: absolute;
+    top: 15px;
+    right: 20px; /* Top-right corner */
+    z-index: 1001;
+  }
+
+  /* Hide nav links initially */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #f5f5dc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 60px; /* dropdown below navbar */
+    right: 20px;
+    width: 200px;
+    padding: 15px;
+    z-index: 1000;
+  }
+
+  /* Toggle menu when checkbox is checked */
+  .menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
