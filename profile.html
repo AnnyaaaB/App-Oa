@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile - Apple & Oats</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <div class="app-overlay">
+      <nav class="navbar"><div class="logo">🍎 Apple & Oats</div></nav>
+
+      <main class="app-main">
+        <h1 class="page-title">Your Profile</h1>
+        <div style="display:flex; gap:18px; align-items:center; flex-wrap:wrap;">
+          <img id="profile-avatar" class="profile-pic" src="./assets/plants.png" alt="avatar" />
+          <div>
+            <div id="profile-name" style="font-weight:800; font-size:1.1rem;">User</div>
+            <div id="profile-email" class="small">email@example.com</div>
+            <div style="margin-top:10px;">
+              <a href="dashboard.html"><button>Go to Dashboard</button></a>
+            </div>
+          </div>
+        </div>
+
+        <section style="width:100%; margin-top:12px;">
+          <h3>Saved Plant History</h3>
+          <div id="profile-plants"></div>
+        </section>
+
+        <section style="margin-top:12px;">
+          <h3>Edit Profile</h3>
+          <form id="profile-form" class="form">
+            <input id="pf-name" class="input" placeholder="Name" />
+            <input id="pf-email" class="input" placeholder="Email" />
+            <div style="display:flex; gap:8px; align-items:center;">
+              <input id="pf-avatar" type="file" accept="image/*" />
+              <img id="profile-avatar-preview" src="./assets/plants.png" class="profile-pic" alt="preview" />
+            </div>
+            <button type="submit">Save</button>
+          </form>
+        </section>
+      </main>
+
+       <!-- Footer -->
+      <footer>
+        <p>&copy; 2025 Apple & Oats. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

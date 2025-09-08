@@ -1,0 +1,478 @@
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fdf6e3; /* fallback */
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-image: url("./assets/plants.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain; /* ✅ Show full picture always */
+  background-attachment: fixed; /* ✅ keeps bg steady */
+  image-rendering: pixelated; /* keep pixel art sharp */
+  overflow-x: hidden;
+}
+
+
+/* Overlay */
+.app-overlay {
+  background: rgba(255, 255, 255, 0);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main */
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Comic Neue', cursive, sans-serif;
+  color: #000;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 5px rgba(80, 120, 80, 0.4);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(135deg, #a8d5ba, #faf3dd);
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(100, 140, 100, 0.3);
+  transition: all 0.2s ease;
+}
+
+button:hover,
+button:focus {
+  background: linear-gradient(135deg, #6b8e23, #fdf6e3);
+  transform: scale(1.08);
+  box-shadow: 0 6px 14px rgba(80, 120, 80, 0.45);
+  outline: none;
+}
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(100, 120, 100, 0.25);
+  padding: 1.5rem;
+  margin: 1rem auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 600px;
+}
+
+.card:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: 0 8px 20px rgba(60, 110, 71, 0.4);
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, #faf3dd, #a8d5ba);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 1200px;
+}
+
+.logo {
+  font-family: "Comic Neue", cursive, sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #3c6e47;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-links a {
+  background-color: #fff;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  color: #444;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+  background-color: #a8d5ba;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Paragraphs */
+p {
+  color: #111;
+  line-height: 1.6;
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+}
+
+/* Responsive: tablets & mobiles */
+@media (max-width: 1024px) {
+  .app-main { max-width: 700px; padding: 1rem; }
+}
+
+@media (max-width: 768px) {
+  .app-container { background-size: cover; background-position: top center; }
+  .app-main { padding: 1rem; max-width: 95%; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.2rem; }
+  .card { padding: 1rem; }
+  button { width: 100%; }
+  .navbar { flex-direction: column; align-items: flex-start; padding: 0.5rem 1rem; }
+  .nav-links { flex-direction: column; gap: 0.5rem; }
+}
+
+/* Card grid container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two per row */
+  gap: 1.5rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+/* Cards as small square boxes */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 200px;   /* square size */
+  height: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;  /* stack content vertically */
+  justify-content: space-between; /* push button to bottom */
+  overflow: hidden; /* ensure no content leaks out */
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Buttons inside card */
+.card button {
+  margin-top: auto; /* forces button(s) to bottom */
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f6a5c0;
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.card button:hover {
+  background-color: #f48fb1;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr; /* stack vertically */
+  }
+
+  .card {
+    width: 160px;
+    height: 160px;
+  }
+
+  .card h2 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.75rem;
+  }
+
+  .card button {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Adjust card layout so buttons aren't forced to bottom */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1rem;
+  width: 220px;
+  height: 220px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Headings and text take top half */
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.85rem;
+  flex-grow: 1;
+}
+
+/* Normal single button cards (Chatbot, Knowledge Hub, Plant Scanner) */
+.card > button {
+  margin-top: 1rem;         /* not stuck at bottom */
+  align-self: center;       /* keep centered */
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f6a5c0;
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.card > button:hover {
+  background-color: #f48fb1;
+}
+
+/* Multiple button layout (Join Community) */
+.card-buttons {
+  display: flex;
+  flex-direction: row;       /* side by side */
+  justify-content: center;   /* center inside card */
+  align-items: center;
+  gap: 1rem;                 /* pretty space between them */
+  margin-top: 1rem;
+  flex-wrap: wrap;           /* ensures they stay inside box on small screens */
+}
+
+.card-buttons button {
+  flex: 1 1 auto;            /* allows shrinking if needed */
+  max-width: 90px;           /* keep them small and neat */
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f6a5c0;
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.card-buttons button:hover {
+  background-color: #f48fb1;
+}
+
+/* Card container grid */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 per row on desktop */
+  gap: 1.5rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+/* Card style */
+.card {
+  background: #fdf6e3;  /* ✅ light crème beige */
+  border-radius: 1rem;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Card buttons */
+.card button {
+  margin-top: 0.5rem;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f6a5c0;
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #f48fb1;
+}
+
+/* Join community multiple buttons */
+.card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr; /* stack vertically */
+  }
+}
+
+.card {
+  background: #FCF6D9; /* richer beige */
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* CTA box styling */
+/* CTA box styling */
+.cta {
+  background-color: #f5f5dc;   /* light beige */
+  border-radius: 16px;         /* softer, more aesthetic rounding */
+  padding: 15px 25px;          /* balanced padding */
+  margin: 40px auto;           /* space around + centered */
+  max-width: 380px;            /* smaller box width */
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* softer, aesthetic shadow */
+}
+
+/* CTA text */
+.cta p {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #000; /* slightly softer dark gray instead of pure black */
+}
+ 
+/* CTA button */
+.cta .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #d8f3dc;   /* creme light green */
+  color: #1b4332;              /* deep green text for contrast */
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.cta .btn:hover {
+  background-color: #4b5320;   /* army green */
+  color: #fff;                 /* white text for contrast */
+}
+
+/* Footer styling */
+footer {
+  background-color: #f5f5dc;    /* light beige */
+  color: #444;                  /* softer dark gray for a modern feel */
+  text-align: center;
+  padding: 0px 4px;            /* thinner padding */
+  font-size: 0.8rem;            /* slightly smaller text */
+  border-top: 1px solid #e6e6c0; /* very subtle border */
+  margin-top: 15px;
+  border-radius: 8px 8px 0 0;   /* softer rounded top edges */
+  opacity: 0.95;                /* slight transparency for aesthetics */
+}
+
+.app-main h1 + p {
+  background-color: #f5f5dc;
+  border-radius: 14px;
+  padding: 15px 20px;
+  margin: 15px auto 30px auto;
+  max-width: 600px;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Forms and profile */
+.form{
+  display:flex; flex-direction:column; gap:8px; width:100%; max-width:480px;
+}
+.input, .textarea { padding:10px; border-radius:8px; border:1px solid #eee; font-size:0.95rem; }
+.profile-pic{width:84px;height:84px;border-radius:999px; object-fit:cover; border:2px solid #fff; box-shadow:0 6px 14px rgba(0,0,0,0.06);}
+
+/* small utility */
+.small{font-size:0.85rem;color:#4b5a47;}
+.center{display:flex; justify-content:center; align-items:center;}
+
+/* Dashboard list (for saved plants) */
+.plant-list{display:flex; flex-direction:column; gap:10px; width:100%;}
+.plant-item{display:flex; gap:12px; align-items:center; background:rgba(255,255,255,0.95); border-radius:12px; padding:8px; box-shadow:var(--card-shadow);}
+.plant-thumb{width:72px;height:72px;border-radius:10px; object-fit:cover; background:#eee; border:1px solid #f0f0f0;}
+.plant-meta{flex:1;}
+.status-pill{padding:6px 8px; border-radius:999px; font-weight:700; font-size:0.85rem;}
+.status-healthy{background:#e6f4ea;color:#1a7a3a;}
+.status-risk{background:#fff1f0;color:#b92a2a;}
+
+
+
+/* Chatbot UI */
+.chat-wrap{width:100%; max-width:760px; display:flex; flex-direction:column; gap:12px;}
+.chat-window{height:360px; overflow:auto; background:rgba(255,255,255,0.97); padding:12px; border-radius:12px; box-shadow:var(--card-shadow);}
+.chat-msg{padding:8px 10px; border-radius:12px; display:inline-block; max-width:80%;}
+.chat-user{background:#f0f6f0; align-self:flex-end;}
+.chat-bot{background:#fff9f0; align-self:flex-start;}
+.chat-input{display:flex; gap:8px; margin-top:6px;}
+.chat-input input{flex:1;padding:10px;border-radius:10px;border:1px solid #eee;}
+.chat-input button{padding:10px 12px;border-radius:10px;border:none;background:var(--soft);font-weight:700;}
