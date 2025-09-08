@@ -383,24 +383,30 @@ p {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* CTA box styling */
+
 /* CTA box styling */
 .cta {
-  background-color: #f5f5dc;   /* light beige */
-  border-radius: 16px;         /* softer, more aesthetic rounding */
-  padding: 15px 25px;          /* balanced padding */
-  margin: 40px auto;           /* space around + centered */
-  max-width: 380px;            /* smaller box width */
+  background-color: #f5f5dc;     /* light beige */
+  border-radius: 20px;           /* rounded edges */
+  width: 152px;                  /* fixed width */
+  height: 152px;                 /* same as width → square */
+  margin: 40px auto;             /* center horizontally + spacing */
+  display: flex;                 /* center content inside */
+  flex-direction: column;        /* stack text + button */
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* softer, aesthetic shadow */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* soft shadow */
+  padding: 20px;                 /* inner spacing */
 }
 
 /* CTA text */
 .cta p {
   font-size: 1.1rem;
-  margin-bottom: 12px;
-  color: #000; /* slightly softer dark gray instead of pure black */
+  margin-bottom: 15px;
+  color: #000;
 }
+
  
 /* CTA button */
 .cta .btn {
@@ -478,18 +484,26 @@ footer {
 .chat-input button{padding:10px 12px;border-radius:10px;border:none;background:var(--soft);font-weight:700;}
 
 
-/* Mobile layout (max-width: 600px) */
+/* Default desktop / larger screens */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Small screens: turn into 2x2 grid */
 @media (max-width: 600px) {
   .nav-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 10px 20px; /* row gap, column gap */
-    justify-items: center; /* center the items in each column */
-    margin-top: 10px;
+    display: grid !important;                /* force override */
+    grid-template-columns: repeat(2, 1fr);   /* 2 columns */
+    gap: 10px 20px;                          /* row gap, column gap */
+    justify-items: center;                   /* center each link */
   }
 
   .nav-links li {
-    width: 100%; /* makes each link evenly spaced */
+    width: 100%;
     text-align: center;
   }
 }
