@@ -515,9 +515,24 @@ footer {
   display: none;
 }
 
-/* Mobile & tablet layout */
+/* ✅ Mobile / Tablet */
 @media (max-width: 768px) {
-  /* Show hamburger */
+  /* Hide links by default on mobile */
+  .nav-links {
+    display: none !important;
+    flex-direction: column;
+    background-color: #f5f5dc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 15px;
+    z-index: 1000;
+  }
+
+  /* Show hamburger (☰ / ✖) */
   .hamburger {
     display: block;
     font-size: 2rem;
@@ -525,28 +540,23 @@ footer {
     color: #2c2c2c;
     position: absolute;
     top: 15px;
-    right: 20px; /* Top-right corner */
+    right: 20px;
     z-index: 1001;
   }
 
-  /* Hide nav links initially */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #f5f5dc;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 60px; /* dropdown below navbar */
-    right: 20px;
-    width: 200px;
-    padding: 15px;
-    z-index: 1000;
+  /* Hamburger icon (☰) */
+  .hamburger::before {
+    content: "☰";
   }
 
-  /* Toggle menu when checkbox is checked */
+  /* Change hamburger to close (✖) when checked */
+  .menu-toggle:checked + .hamburger::before {
+    content: "✖";
+  }
+
+  /* Show menu only when checked */
   .menu-toggle:checked + .hamburger + .nav-links {
-    display: flex;
+    display: flex !important;
   }
 
   .nav-links li {
