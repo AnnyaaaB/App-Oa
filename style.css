@@ -572,11 +572,12 @@ body, html {
   height: 100%; /* ensures full height */
 }
 
-/* Fix background image on tablets/iPads */
+/* ✅ Balanced background scaling for iPad / tablet */
 @media (min-width: 601px) and (max-width: 1024px) {
   .app-container {
-    background-size: cover;      /* fill the whole screen */
-    background-position: center; /* keep it centered */
-    background-attachment: scroll; /* avoid iOS Safari issues with fixed */
+    background-size: 120% auto;   /* slightly zoomed, fills without extreme crop */
+    background-position: center top; /* keep focus towards top-center */
+    background-repeat: no-repeat;
+    background-attachment: scroll;  /* avoids iOS Safari bugs */
   }
 }
