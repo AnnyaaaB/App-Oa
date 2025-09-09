@@ -663,3 +663,17 @@ body, html {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* soft shadow */
   background-color: #fffef5; /* slight warm tint for feedback */
 }
+
+/* ✅ Cute mobile heading box */
+@media (max-width: 600px) {
+  .app-main h1 {
+    display: inline-block;              /* shrink to text width */
+    background-color: #fdf6e3;          /* soft beige */
+    padding: 10px 16px;                 /* inner spacing */
+    border-radius: 14px;                /* rounded edges */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* soft shadow */
+    font-size: 1.4rem;                  /* a bit smaller for mobile */
+    margin: 10px auto 20px auto;        /* center it */
+    text-align: center;                 /* center text inside */
+  }
+}
