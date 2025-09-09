@@ -592,3 +592,51 @@ body, html {
     background-attachment: scroll; /* avoids iOS Safari issues with fixed */
   }
 }
+
+/* ✅ Mobile layout: 2x2 cards + smaller CTA */
+@media (max-width: 600px) {
+  /* Cards: 2 per row */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cols */
+    gap: 12px; /* space between cards */
+    justify-items: center;
+  }
+
+  .card {
+    width: 140px;   /* smaller card */
+    height: 140px;
+    padding: 0.8rem;
+  }
+
+  .card h2 {
+    font-size: 0.95rem;
+  }
+
+  .card p {
+    font-size: 0.75rem;
+  }
+
+  .card button {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  /* CTA smaller & centered */
+  .cta {
+    width: 140px;
+    height: 140px;
+    margin: 30px auto; /* center it */
+    padding: 12px;
+  }
+
+  .cta p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .cta .btn {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+}
