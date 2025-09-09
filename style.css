@@ -649,3 +649,17 @@ body, html {
     font-size: 0.8rem;
   }
 }
+
+
+/* ✅ Card hover / touch effect */
+.card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.card:hover,
+.card:active {
+  transform: translateY(-6px); /* lift a little */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* soft shadow */
+  background-color: #fffef5; /* slight warm tint for feedback */
+}
