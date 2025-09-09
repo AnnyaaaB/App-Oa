@@ -581,3 +581,14 @@ body, html {
     background-attachment: fixed;  /* same behavior as desktop */
   }
 }
+
+/* ✅ Mobile, Tablet, iPad → Use new wallpaper */
+@media (max-width: 1024px) {
+  .app-container {
+    background-image: url("./assets/mobile-bg.png"); /* your mobile wallpaper */
+    background-size: cover;       /* make it fill screen */
+    background-position: center;  /* center nicely */
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* avoids iOS Safari issues with fixed */
+  }
+}
