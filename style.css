@@ -678,16 +678,7 @@ body, html {
   }
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
+
 
 /* Container for plants */
 .plant-list {
@@ -834,4 +825,17 @@ body, html {
   gap: 14px;
   max-width: 360px;   /* smaller size */
   width: 100%;
+}
+
+/* Utility class for screen-reader-only text */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
