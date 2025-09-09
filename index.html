@@ -16,8 +16,10 @@
   <div class="logo">🍎 Apple & Oats</div>
 
   <!-- Hidden checkbox toggle -->
-  <input type="checkbox" id="menu-toggle" class="menu-toggle">
-  <label for="menu-toggle" class="hamburger"></label>
+ <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
+<label for="menu-toggle" class="hamburger">
+  <span class="visually-hidden">Toggle navigation menu</span>
+</label>
 
   <ul class="nav-links">
     <li><a href="features.html">Features</a></li>

@@ -6,6 +6,19 @@
   <title>Sign Up - Apple & Oats</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Utility for screen-reader-only labels */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+  </style>
 </head>
 <body>
   <div class="app-container">
@@ -15,14 +28,21 @@
       <main class="app-main">
         <h1 class="page-title">Sign Up</h1>
         <form id="signup-form" class="form" style="max-width:420px;">
-          <input id="su-name" placeholder="Full name" class="input"/>
-          <input id="su-email" placeholder="Email" class="input"/>
-          <input id="su-avatar" type="file" accept="image/*" />
+          
+          <label for="su-name" class="visually-hidden">Full Name</label>
+          <input id="su-name" name="name" placeholder="Full name" class="input" required />
+          
+          <label for="su-email" class="visually-hidden">Email</label>
+          <input id="su-email" name="email" type="email" placeholder="Email" class="input" required />
+          
+          <label for="su-avatar">Profile Picture</label>
+          <input id="su-avatar" name="avatar" type="file" accept="image/*" />
+          
           <button type="submit">Create account</button>
         </form>
       </main>
 
-       <!-- Footer -->
+      <!-- Footer -->
       <footer>
         <p>&copy; 2025 Apple & Oats. All rights reserved.</p>
       </footer>

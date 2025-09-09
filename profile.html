@@ -25,23 +25,31 @@
           </div>
         </div>
 
-        <section style="width:100%; margin-top:12px;">
-          <h3>Saved Plant History</h3>
-          <div id="profile-plants"></div>
-        </section>
+    <section style="width:100%; margin-top:12px;">
+  <h2>Saved Plant History</h2>
+  <div id="profile-plants"></div>
+</section>
 
-        <section style="margin-top:12px;">
-          <h3>Edit Profile</h3>
-          <form id="profile-form" class="form">
-            <input id="pf-name" class="input" placeholder="Name" />
-            <input id="pf-email" class="input" placeholder="Email" />
-            <div style="display:flex; gap:8px; align-items:center;">
-              <input id="pf-avatar" type="file" accept="image/*" />
-              <img id="profile-avatar-preview" src="./assets/plants.png" class="profile-pic" alt="preview" />
-            </div>
-            <button type="submit">Save</button>
-          </form>
-        </section>
+<section style="margin-top:12px;">
+  <h2>Edit Profile</h2>
+  <form id="profile-form" class="form">
+    <label for="pf-name" class="visually-hidden">Name</label>
+    <input id="pf-name" class="input" type="text" placeholder="Name" />
+
+    <label for="pf-email" class="visually-hidden">Email</label>
+    <input id="pf-email" class="input" type="email" placeholder="Email" />
+
+    <div style="display:flex; gap:8px; align-items:center;">
+      <label for="pf-avatar" class="visually-hidden">Upload avatar</label>
+      <input id="pf-avatar" type="file" accept="image/*" />
+      <img id="profile-avatar-preview" src="./assets/plants.png" class="profile-pic" alt="preview" />
+    </div>
+
+    <button type="submit">Save</button>
+  </form>
+</section>
+
+
       </main>
 
        <!-- Footer -->

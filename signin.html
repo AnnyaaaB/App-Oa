@@ -8,19 +8,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="app-container">
+  <div class="app-container signin-container">
     <div class="app-overlay">
-      <nav class="navbar"><div class="logo">🍎 Apple & Oats</div></nav>
+      <nav class="navbar">
+        <div class="logo">🍎 Apple & Oats</div>
+      </nav>
 
       <main class="app-main">
         <h1 class="page-title">Sign In</h1>
-        <form id="signin-form" class="form" style="max-width:420px;">
-          <input id="si-email" placeholder="Email" class="input"/>
+        <form id="signin-form" class="form" style="max-width:420px; width:100%;">
+          <label for="si-email" class="visually-hidden">Email Address</label>
+          <input id="si-email" name="email" type="email" placeholder="Email" class="input" required />
           <button type="submit">Sign In</button>
           <div class="small">Demo sign-in: entering an email will create a local profile.</div>
         </form>
       </main>
-       <!-- Footer -->
+
+      <!-- Footer -->
       <footer>
         <p>&copy; 2025 Apple & Oats. All rights reserved.</p>
       </footer>

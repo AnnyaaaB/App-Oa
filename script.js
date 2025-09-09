@@ -348,3 +348,49 @@ const App = (() => {
 document.addEventListener('DOMContentLoaded', ()=>{
   App.initCommon();
 });
+
+// Load saved scans from localStorage
+function loadPlants() {
+  const list = document.getElementById("plants-list");
+  list.innerHTML = ""; // clear existing
+
+  let plants = JSON.parse(localStorage.getItem("savedPlants")) || [];
+
+  if (plants.length === 0) {
+    list.innerHTML = "<p>No saved plants yet.</p>";
+    return;
+  }
+
+  plants.forEach((plant, index) => {
+    const item = document.createElement("div");
+    item.className = "plant-item";
+
+    // Plant name/details
+    const span = document.createElement("span");
+    span.textContent = plant.name || `Plant ${index + 1}`;
+
+    // Delete button
+    const delBtn = document.createElement("button");
+    delBtn.className = "delete-btn";
+    delBtn.textContent = "❌ Delete";
+
+    delBtn.addEventListener("click", () => {
+      deletePlant(index);
+    });
+
+    item.appendChild(span);
+    item.appendChild(delBtn);
+    list.appendChild(item);
+  });
+}
+
+// Delete plant by index
+function deletePlant(index) {
+  let plants = JSON.parse(localStorage.getItem("savedPlants")) || [];
+  plants.splice(index, 1); // remove item
+  localStorage.setItem("savedPlants", JSON.stringify(plants));
+  loadPlants(); // reload list
+}
+
+// Run on page load
+window.addEventListener("DOMContentLoaded", loadPlants);

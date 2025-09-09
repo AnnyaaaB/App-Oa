@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
 
-  background-image: url("./assets/plants.png");
+  background-image: url("./assets/desk-bg.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain; /* ✅ Show full picture always */
@@ -676,4 +676,162 @@ body, html {
     margin: 10px auto 20px auto;        /* center it */
     text-align: center;                 /* center text inside */
   }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Container for plants */
+.plant-list {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual plant item */
+.plant-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fafafa;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Delete button */
+.delete-btn {
+  background: #ff6666;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #e05555;
+}
+
+
+/* Visually hidden label for accessibility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+/* Center sign-in form container */
+.signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* full screen height */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Sign-in box */
+#signin-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 320px;  /* ✅ small width */
+  text-align: center; /* keeps things neat */
+}
+
+/* Input field */
+#signin-form .input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+/* Button */
+#signin-form button {
+  background: #d8f3dc;
+  color: #000;
+  font-weight: 600; /* ✅ bold text */
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+#signin-form button:hover {
+  background: #b7e4c7;
+  color: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  #signin-form {
+    max-width: 280px; /* slightly smaller on mobile */
+    padding: 16px;
+  }
+}
+
+
+/* Fullscreen container for centering */
+.signin-container {
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Overlay keeps background layout */
+.app-overlay {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content centered */
+.app-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center children horizontally */
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/* Form box styling */
+#signin-form {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 360px;   /* smaller size */
+  width: 100%;
 }

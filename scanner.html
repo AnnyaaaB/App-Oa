@@ -18,23 +18,29 @@
         <h1 class="page-title">Plant Scanner</h1>
         <p class="lead">Upload an image or use your camera to capture a plant. Demo analysis is performed locally.</p>
 
-        <div style="display:flex; gap:14px; align-items:flex-start; flex-wrap:wrap; justify-content:center;">
-          <div style="display:flex; flex-direction:column; gap:10px; align-items:center;">
-            <video id="scanner-video" style="display:none; width:260px; border-radius:10px; background:#000;"></video>
-            <img id="scanner-preview" src="" alt="preview" style="display:block; width:260px; height:200px; object-fit:cover; border-radius:10px; background:#f6f6f6;">
-            <div style="display:flex; gap:8px;">
-              <button id="scanner-start">Start Camera</button>
-              <button id="scanner-capture" style="display:none;">Capture</button>
-            </div>
-            <input id="scanner-upload" type="file" accept="image/*" />
-            <div id="scanner-result" class="small" style="margin-top:6px;"></div>
-            <button id="scanner-analyze">Analyze (mock)</button>
-          </div>
-        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; align-items:center;">
+          <!-- Video element for live camera feed -->
+          <video id="scanner-preview"
+                 style="display:none; width:260px; border-radius:10px; background:#000;"
+                 muted playsinline>
+            <!-- Fallback text for non-supported browsers -->
+            <p>Your browser does not support video. Please upload an image instead.</p>
+          </video>
 
+          <div style="display:flex; gap:8px;">
+            <button id="scanner-start">Start Camera</button>
+            <button id="scanner-capture" style="display:none;">Capture</button>
+          </div>
+
+          <label for="scanner-upload" class="visually-hidden">Upload plant image</label>
+          <input id="scanner-upload" type="file" accept="image/*" capture="environment" />
+
+          <div id="scanner-result" class="small" style="margin-top:6px;"></div>
+          <button id="scanner-analyze">Analyze (mock)</button>
+        </div>
       </main>
 
-       <!-- Footer -->
+      <!-- Footer -->
       <footer>
         <p>&copy; 2025 Apple & Oats. All rights reserved.</p>
       </footer>
