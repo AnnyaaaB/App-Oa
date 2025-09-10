@@ -6,52 +6,52 @@ function saveData(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
-// ========== NAVBAR INJECTION ==========
-document.addEventListener("DOMContentLoaded", () => {
+// ========== NAVBAR UPDATE FUNCTION ==========
+function updateNavbar() {
   const navContainer = document.querySelector(".navbar-container");
-  const user = JSON.parse(localStorage.getItem("user"));
+  if (!navContainer) return;
 
-  if (navContainer) {
-    fetch("navbar.html")
-      .then(res => res.text())
-      .then(html => {
-        navContainer.innerHTML = html;
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(html => {
+      navContainer.innerHTML = html;
 
-        // Select buttons
-        const signInBtn = navContainer.querySelector(".nav-signin");
-        const signUpBtn = navContainer.querySelector(".nav-signup");
-        let signOutBtn = navContainer.querySelector(".nav-signout");
+      const user = JSON.parse(localStorage.getItem("user"));
 
-        if (user) {
-          // Remove Sign In / Sign Up completely
-          if (signInBtn) signInBtn.remove();
-          if (signUpBtn) signUpBtn.remove();
+      const signInBtn = navContainer.querySelector(".nav-signin");
+      const signUpBtn = navContainer.querySelector(".nav-signup");
+      let signOutBtn = navContainer.querySelector(".nav-signout");
 
-          // Add Sign Out if not already present
-          if (!signOutBtn) {
-            signOutBtn = document.createElement("button");
-            signOutBtn.textContent = "Sign Out";
-            signOutBtn.className = "nav-signout";
-            signOutBtn.style.marginLeft = "10px";
-            signOutBtn.onclick = () => {
-              localStorage.removeItem("user");
-              alert("Signed out successfully!");
-              window.location.href = "index.html";
-            };
-            navContainer.appendChild(signOutBtn);
-          }
-        } else {
-          // Visitor: Remove Sign Out if exists
-          if (signOutBtn) signOutBtn.remove();
+      if (user) {
+        if (signInBtn) signInBtn.remove();
+        if (signUpBtn) signUpBtn.remove();
 
-          // Ensure Sign In / Sign Up are visible
-          if (signInBtn) signInBtn.style.display = "inline-block";
-          if (signUpBtn) signUpBtn.style.display = "inline-block";
+        if (!signOutBtn) {
+          signOutBtn = document.createElement("button");
+          signOutBtn.textContent = "Sign Out";
+          signOutBtn.className = "nav-signout";
+          signOutBtn.style.marginLeft = "10px";
+          signOutBtn.onclick = () => {
+            localStorage.removeItem("user");
+            alert("Signed out successfully!");
+            updateNavbar(); // Update navbar immediately
+          };
+          navContainer.appendChild(signOutBtn);
         }
-      });
-  }
+      } else {
+        if (signOutBtn) signOutBtn.remove();
+        if (signInBtn) signInBtn.style.display = "inline-block";
+        if (signUpBtn) signUpBtn.style.display = "inline-block";
+      }
+    });
+}
+
+// ========== NAVBAR INJECTION ON PAGE LOAD ==========
+document.addEventListener("DOMContentLoaded", () => {
+  updateNavbar();
 
   // ========== HOMEPAGE BUTTONS ==========
+  const user = JSON.parse(localStorage.getItem("user"));
   const homepageButtons = document.querySelectorAll("main .card button");
   homepageButtons.forEach(btn => {
     if (user) {
@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 // ========== DEMO GOOGLE SIGN-IN ==========
 function googleSignInDemo() {
   const demoUser = {
@@ -82,6 +81,7 @@ function googleSignInDemo() {
   };
   localStorage.setItem("user", JSON.stringify(demoUser));
   alert("Signed in with Google (Demo)!");
+  updateNavbar(); // Update navbar immediately
   window.location.href = "profile.html";
 }
 
@@ -129,6 +129,7 @@ if (signinForm) {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user && user.email === email && user.pw === pw) {
       alert("Sign in successful!");
+      updateNavbar(); // Update navbar immediately
       window.location.href = "profile.html";
     } else {
       alert("Invalid email or password.");

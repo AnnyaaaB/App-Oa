@@ -1116,3 +1116,96 @@ body, html {
   font-size: 0.7rem;
   color: #555;
 }
+
+/* ---------- MOBILE / TABLET HAMBURGER NAVBAR ---------- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: nowrap;               /* keep logo & hamburger on one line */
+    justify-content: space-between;  /* logo left, hamburger right */
+    position: relative;              /* for dropdown positioning */
+    padding: 10px 16px;
+  }
+
+  /* Hamburger toggle */
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #2c2c2c;
+    user-select: none;
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger::before {
+    content: "☰";
+    display: inline-block;
+    transition: transform 0.2s ease, content 0.2s ease;
+  }
+
+  /* Toggle icon changes on check */
+  .menu-toggle:checked + .hamburger::before {
+    content: "✖";
+    transform: rotate(90deg);
+  }
+
+  /* Dropdown menu container */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;              /* directly below navbar */
+    right: 0;
+    width: 220px;
+    background-color: #f5f5dc;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-height: 0;          /* hidden by default */
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  /* Dropdown visible when checked */
+  .menu-toggle:checked + .hamburger + .nav-links {
+    max-height: 500px;      /* enough to show all links */
+    opacity: 1;
+  }
+
+  .nav-links li {
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 0;       /* large tappable area */
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: background 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    background-color: #e1e7d6;
+  }
+}
+
+/* Very small screens: full width dropdown */
+@media (max-width: 400px) {
+  .nav-links {
+    width: 100%;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 12px 12px;
+    padding: 0;
+  }
+
+  .nav-links a {
+    padding: 14px 0;         /* bigger touch area */
+  }
+}
