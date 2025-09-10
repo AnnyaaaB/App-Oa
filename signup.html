@@ -8,45 +8,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="app-container">
+  <div class="app-container signin-container">
     <div class="app-overlay">
 
- <!-- Navbar -->
- <div class="navbar-container"></div>
-
-
+      <!-- Navbar -->
+      <div class="navbar-container"></div>
 
       <main class="app-main">
         <h1 class="page-title">Sign Up</h1>
-        <form id="signup-form" class="form" style="max-width:420px;">
-          
+        <form id="signup-form" class="form">
           <label for="su-name" class="visually-hidden">Full Name</label>
-          <input id="su-name" name="name" placeholder="Full name" class="input" required />
-          
+          <input type="text" id="su-name" class="input" placeholder="Full Name" required />
+
           <label for="su-email" class="visually-hidden">Email</label>
-          <input id="su-email" name="email" type="email" placeholder="Email" class="input" required />
-          
+          <input type="email" id="su-email" class="input" placeholder="Email" required />
+
+          <label for="su-password" class="visually-hidden">Password</label>
+          <input type="password" id="su-password" class="input" placeholder="Password" required />
+
+          <label for="su-confirm-password" class="visually-hidden">Confirm Password</label>
+          <input type="password" id="su-confirm-password" class="input" placeholder="Confirm Password" required />
+
           <label for="su-avatar">Profile Picture</label>
           <input id="su-avatar" name="avatar" type="file" accept="image/*" />
           
-          <button type="submit">Create account</button>
+
+          <button type="submit">Sign Up</button>
+          <p class="small">Already have an account? <a href="signin.html">Sign In</a></p>
         </form>
       </main>
 
-      <!-- Footer -->
       <footer>
         <p>&copy; 2025 Apple & Oats. All rights reserved.</p>
       </footer>
+
     </div>
   </div>
 
-  <!-- ✅ Full logo modal -->
-  <div id="logoModal" class="logo-modal">
-    <span class="close">&times;</span>
-    <img class="logo-modal-content" id="logoFull" />
-  </div>
-
-  <!-- ✅ External JS -->
   <script src="script.js"></script>
 </body>
 </html>

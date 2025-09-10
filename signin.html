@@ -10,26 +10,32 @@
 <body>
   <div class="app-container signin-container">
     <div class="app-overlay">
- 
-         <!-- Navbar -->
- <div class="navbar-container"></div>
- 
+
+      <!-- Navbar -->
+      <div class="navbar-container"></div>
+
       <main class="app-main">
         <h1 class="page-title">Sign In</h1>
-        <form id="signin-form" class="form" style="max-width:420px; width:100%;">
+        <form id="signin-form" class="form">
           <label for="si-email" class="visually-hidden">Email Address</label>
           <input id="si-email" name="email" type="email" placeholder="Email" class="input" required />
+
+          <label for="si-password" class="visually-hidden">Password</label>
+          <input id="si-password" name="password" type="password" placeholder="Password" class="input" required />
+
           <button type="submit">Sign In</button>
-          <div class="small">Demo sign-in: entering an email will create a local profile.</div>
+          <div class="small">Demo: email + password are stored locally.</div>
+          <p class="small">Don't have an account? <a href="signup.html">Sign Up</a></p>
         </form>
       </main>
 
-      <!-- Footer -->
       <footer>
         <p>&copy; 2025 Apple & Oats. All rights reserved.</p>
       </footer>
+
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
