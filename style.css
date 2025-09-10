@@ -899,7 +899,7 @@ body, html {
 }
 
 .nav-links a:hover {
-  color: #4caf50;
+  color: #333;
 }
 
 /* Hamburger (mobile toggle placeholder) */
@@ -936,14 +936,35 @@ body, html {
   cursor: pointer;
 }
 
-/* Default: Desktop / Laptop / Tablet / iPad */
+/* Navbar container */
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* pushes logo left, links right */
+  justify-content: space-between; /* left vs right */
   padding: 10px 20px;
 }
 
+/* Left group: logo + text */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Right group: links or hamburger */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Links: visible on large screens */
 .nav-links {
   display: flex;
   gap: 20px;
@@ -951,11 +972,11 @@ body, html {
 }
 
 .hamburger {
-  display: none; /* hide hamburger on large screens */
+  display: none; /* hidden on large screens */
 }
 
 .menu-toggle {
-  display: none; /* hide the actual checkbox */
+  display: none; /* hide checkbox */
 }
 
 /* ✅ Mobile / Small Screens */
@@ -974,27 +995,23 @@ body, html {
     z-index: 1000;
   }
 
-  /* Show hamburger on the right side */
+  /* Hamburger shows on small screens */
   .hamburger {
     display: block;
     font-size: 2rem;
     cursor: pointer;
     color: #2c2c2c;
     user-select: none;
-    margin-left: auto; /* pushes it to the far right */
   }
 
-  /* Hamburger icon (☰) */
   .hamburger::before {
     content: "☰";
   }
 
-  /* Change to ✖ when menu is open */
   .menu-toggle:checked + .hamburger::before {
     content: "✖";
   }
 
-  /* Show nav when menu is open */
   .menu-toggle:checked + .hamburger + .nav-links {
     display: flex;
   }
