@@ -935,3 +935,69 @@ body, html {
   color: white;
   cursor: pointer;
 }
+
+/* Default: Desktop / Laptop / Tablet / iPad */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.hamburger {
+  display: none; /* hide hamburger on large screens */
+}
+
+.menu-toggle {
+  display: none; /* hide the actual checkbox */
+}
+
+/* ✅ Mobile / Small Screens */
+@media (max-width: 768px) {
+  /* Hide nav links by default on mobile */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #f5f5dc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 15px;
+    z-index: 1000;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #2c2c2c;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+    user-select: none;
+  }
+
+  /* Hamburger icon (☰) */
+  .hamburger::before {
+    content: "☰";
+  }
+
+  /* Change to ✖ when menu is open */
+  .menu-toggle:checked + .hamburger::before {
+    content: "✖";
+  }
+
+  /* Show nav when menu is open */
+  .menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
