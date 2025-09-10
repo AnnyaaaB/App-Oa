@@ -6,24 +6,15 @@
   <title>Sign Up - Apple & Oats</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* Utility for screen-reader-only labels */
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      border: 0;
-    }
-  </style>
 </head>
 <body>
   <div class="app-container">
     <div class="app-overlay">
-      <nav class="navbar"><div class="logo">🍎 Apple & Oats</div></nav>
+
+ <!-- Navbar -->
+ <div class="navbar-container"></div>
+
+
 
       <main class="app-main">
         <h1 class="page-title">Sign Up</h1>
@@ -48,6 +39,14 @@
       </footer>
     </div>
   </div>
+
+  <!-- ✅ Full logo modal -->
+  <div id="logoModal" class="logo-modal">
+    <span class="close">&times;</span>
+    <img class="logo-modal-content" id="logoFull" />
+  </div>
+
+  <!-- ✅ External JS -->
   <script src="script.js"></script>
 </body>
 </html>

@@ -394,3 +394,46 @@ function deletePlant(index) {
 
 // Run on page load
 window.addEventListener("DOMContentLoaded", loadPlants);
+
+
+// Function to initialize logo modal logic
+function initLogoModal() {
+  const logoCircle = document.querySelector(".logo-circle");
+  const modal = document.getElementById("logoModal");
+  const modalImg = document.getElementById("logoFull");
+  const closeBtn = document.querySelector(".logo-modal .close");
+
+  if (logoCircle) {
+    logoCircle.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = logoCircle.src;
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+
+// Function to load navbar.html into pages
+document.addEventListener("DOMContentLoaded", async () => {
+  const container = document.querySelector(".navbar-container");
+  if (container) {
+    try {
+      const res = await fetch("navbar.html");
+      const html = await res.text();
+      container.innerHTML = html;
+      initLogoModal(); // re-bind events after navbar loads
+    } catch (err) {
+      console.error("Failed to load navbar:", err);
+    }
+  }
+});
