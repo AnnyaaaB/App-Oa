@@ -9,7 +9,6 @@
 
   <!-- Right: Hamburger + Links -->
   <div class="navbar-right">
-    <!-- Hidden checkbox toggle -->
     <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
     <label for="menu-toggle" class="hamburger">
       <span class="visually-hidden">Toggle navigation menu</span>
@@ -19,10 +18,12 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="features.html">Features</a></li>
       <li><a href="about.html">About</a></li>
-      <!-- These will be hidden if user is signed in -->
+      <!-- Profile is hidden by default, shown only for logged-in users -->
+      <li><a href="profile.html" class="nav-profile" style="display:none;">Profile</a></li>
+      <!-- Visitors only -->
       <li><a href="signup.html" class="nav-signup">Sign Up</a></li>
       <li><a href="signin.html" class="nav-signin">Sign In</a></li>
-      <!-- Sign Out button will be added here dynamically by JS -->
+      <!-- Sign Out will be injected dynamically -->
     </ul>
   </div>
 </nav>

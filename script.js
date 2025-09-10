@@ -7,6 +7,7 @@ function saveData(key, data) {
 }
 
 // ========== NAVBAR UPDATE FUNCTION ==========
+// ========== NAVBAR UPDATE FUNCTION ==========
 function updateNavbar() {
   const navContainer = document.querySelector(".navbar-container");
   if (!navContainer) return;
@@ -20,11 +21,13 @@ function updateNavbar() {
 
       const signInBtn = navContainer.querySelector(".nav-signin");
       const signUpBtn = navContainer.querySelector(".nav-signup");
+      const profileLink = navContainer.querySelector(".nav-profile");
       let signOutBtn = navContainer.querySelector(".nav-signout");
 
       if (user) {
         if (signInBtn) signInBtn.remove();
         if (signUpBtn) signUpBtn.remove();
+        if (profileLink) profileLink.style.display = "inline-block";
 
         if (!signOutBtn) {
           signOutBtn = document.createElement("button");
@@ -34,14 +37,28 @@ function updateNavbar() {
           signOutBtn.onclick = () => {
             localStorage.removeItem("user");
             alert("Signed out successfully!");
-            updateNavbar(); // Update navbar immediately
+            updateNavbar();
           };
           navContainer.appendChild(signOutBtn);
         }
       } else {
-        if (signOutBtn) signOutBtn.remove();
         if (signInBtn) signInBtn.style.display = "inline-block";
         if (signUpBtn) signUpBtn.style.display = "inline-block";
+        if (profileLink) profileLink.style.display = "none";
+        if (signOutBtn) signOutBtn.remove();
+      }
+
+      // === HOMEPAGE CTA SECTION HANDLING ===
+      const ctaSection = document.querySelector(".cta");
+      if (ctaSection) {
+        if (user) {
+          ctaSection.innerHTML = `<p>🌿 Welcome back, <b>${user.name}</b>!</p>`;
+        } else {
+          ctaSection.innerHTML = `
+            <p>✨ Join now to unlock your personal plant health assistant! ✨</p>
+            <a href="signup.html" class="btn">Sign Up Free</a>
+          `;
+        }
       }
     });
 }
