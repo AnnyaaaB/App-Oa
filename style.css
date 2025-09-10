@@ -937,6 +937,13 @@ body, html {
 }
 
 /* Default: Desktop / Laptop / Tablet / iPad */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* pushes logo left, links right */
+  padding: 10px 20px;
+}
+
 .nav-links {
   display: flex;
   gap: 20px;
@@ -953,7 +960,6 @@ body, html {
 
 /* ✅ Mobile / Small Screens */
 @media (max-width: 768px) {
-  /* Hide nav links by default on mobile */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -968,17 +974,14 @@ body, html {
     z-index: 1000;
   }
 
-  /* Show hamburger */
+  /* Show hamburger on the right side */
   .hamburger {
     display: block;
     font-size: 2rem;
     cursor: pointer;
     color: #2c2c2c;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    z-index: 1001;
     user-select: none;
+    margin-left: auto; /* pushes it to the far right */
   }
 
   /* Hamburger icon (☰) */
