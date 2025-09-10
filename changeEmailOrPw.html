@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Change Email or Password - Apple & Oats</title>
+  <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <div class="app-overlay">
+      <!-- Navbar injected via JS -->
+      <div class="navbar-container"></div>
+
+      <!-- Main content -->
+      <main class="app-main">
+        <h1>Change Email or Password</h1>
+        <p class="small">Update your account details securely below.</p>
+
+        <form id="change-form" class="form">
+          <label for="new-email" class="visually-hidden">New Email</label>
+          <input type="email" id="new-email" class="input" placeholder="Enter new email (optional)" />
+
+          <label for="new-password" class="visually-hidden">New Password</label>
+          <input type="password" id="new-password" class="input" placeholder="Enter new password (optional)" />
+
+          <label for="confirm-password" class="visually-hidden">Confirm Password</label>
+          <input type="password" id="confirm-password" class="input" placeholder="Confirm new password" />
+
+          <button type="submit">Save Changes</button>
+        </form>
+
+        <p class="small">
+          <a href="profile.html">← Back to Profile</a>
+        </p>
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <p>© 2025 Apple & Oats. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -10,34 +10,40 @@
 <body>
   <div class="app-container">
     <div class="app-overlay">
-      
-         <!-- Navbar -->
- <div class="navbar-container"></div>
+
+      <!-- Navbar -->
+      <div class="navbar-container"></div>
 
       <main class="app-main">
         <h1 class="page-title">Plant Scanner</h1>
-        <p class="lead">Upload an image or use your camera to capture a plant. Demo analysis is performed locally.</p>
+        <p class="lead">Upload an image or use your camera to capture a plant. Add a short description for better analysis.</p>
 
         <div style="display:flex; flex-direction:column; gap:10px; align-items:center;">
+
           <!-- Video element for live camera feed -->
           <video id="scanner-preview"
                  style="display:none; width:260px; border-radius:10px; background:#000;"
-                 muted playsinline>
-            <!-- Fallback text for non-supported browsers -->
-            <p>Your browser does not support video. Please upload an image instead.</p>
-          </video>
+                 muted playsinline></video>
 
           <div style="display:flex; gap:8px;">
             <button id="scanner-start">Start Camera</button>
             <button id="scanner-capture" style="display:none;">Capture</button>
           </div>
 
-          <label for="scanner-upload" class="visually-hidden">Upload plant image</label>
           <input id="scanner-upload" type="file" accept="image/*" capture="environment" />
 
+          <!-- New description field -->
+          <textarea id="scanner-desc" class="input" rows="3" placeholder="Describe your plant (optional)..."></textarea>
+
           <div id="scanner-result" class="small" style="margin-top:6px;"></div>
-          <button id="scanner-analyze">Analyze (mock)</button>
+          <button id="scanner-analyze">Analyze</button>
         </div>
+
+        <!-- Chatbot section (hidden for visitors) -->
+        <section id="scanner-chatbot" style="margin-top:20px; display:none;">
+          <h2>🤖 Plantira’s Suggestion</h2>
+          <div id="scanner-chat-response" class="chat-window"></div>
+        </section>
       </main>
 
       <!-- Footer -->

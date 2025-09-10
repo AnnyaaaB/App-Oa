@@ -10,8 +10,8 @@
 <body>
   <div class="app-container">
     <div class="app-overlay">
-        <!-- Navbar -->
- <div class="navbar-container"></div>
+      <!-- Navbar -->
+      <div class="navbar-container"></div>
 
       <main class="app-main">
         <h1 class="page-title">Your Profile</h1>
@@ -20,40 +20,44 @@
           <div>
             <div id="profile-name" style="font-weight:800; font-size:1.1rem;">User</div>
             <div id="profile-email" class="small">email@example.com</div>
-            <div style="margin-top:10px;">
+            
+            <!-- Quick Navigation -->
+            <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
               <a href="dashboard.html"><button>Go to Dashboard</button></a>
+              <a href="chatbot.html"><button>Chat with Chatbot</button></a>
+              <a href="changeEmailOrPw.html"><button>Change Email/Password</button></a>
             </div>
           </div>
         </div>
 
-    <section style="width:100%; margin-top:12px;">
-  <h2>Saved Plant History</h2>
-  <div id="profile-plants"></div>
-</section>
+        <!-- Plant history -->
+        <section style="width:100%; margin-top:12px;">
+          <h2>Saved Plant History</h2>
+          <div id="profile-plants"></div>
+        </section>
 
-<section style="margin-top:12px;">
-  <h2>Edit Profile</h2>
-  <form id="profile-form" class="form">
-    <label for="pf-name" class="visually-hidden">Name</label>
-    <input id="pf-name" class="input" type="text" placeholder="Name" />
+        <!-- Edit Profile -->
+        <section style="margin-top:12px;">
+          <h2>Edit Profile</h2>
+          <form id="profile-form" class="form">
+            <label for="pf-name" class="visually-hidden">Name</label>
+            <input id="pf-name" class="input" type="text" placeholder="Name" />
 
-    <label for="pf-email" class="visually-hidden">Email</label>
-    <input id="pf-email" class="input" type="email" placeholder="Email" />
+            <label for="pf-email" class="visually-hidden">Email</label>
+            <input id="pf-email" class="input" type="email" placeholder="Email" />
 
-    <div style="display:flex; gap:8px; align-items:center;">
-      <label for="pf-avatar" class="visually-hidden">Upload avatar</label>
-      <input id="pf-avatar" type="file" accept="image/*" />
-      <img id="profile-avatar-preview" src="./assets/plants.png" class="profile-pic" alt="preview" />
-    </div>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <label for="pf-avatar" class="visually-hidden">Upload avatar</label>
+              <input id="pf-avatar" type="file" accept="image/*" />
+              <img id="profile-avatar-preview" src="./assets/plants.png" class="profile-pic" alt="preview" />
+            </div>
 
-    <button type="submit">Save</button>
-  </form>
-</section>
-
-
+            <button type="submit">Save</button>
+          </form>
+        </section>
       </main>
 
-       <!-- Footer -->
+      <!-- Footer -->
       <footer>
         <p>&copy; 2025 Apple & Oats. All rights reserved.</p>
       </footer>

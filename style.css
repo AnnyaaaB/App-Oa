@@ -1021,3 +1021,98 @@ body, html {
     text-align: center;
   }
 }
+
+.plant-card-img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.plant-chat-img-container {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.plant-chat-img {
+  max-width: 200px;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+
+/* Plant Image at Top */
+.plant-chat-img-container {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.plant-chat-img {
+  max-width: 200px;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+/* Chat Messages */
+.chat-msg {
+  display: flex;
+  align-items: flex-end;
+  margin: 8px 0;
+  gap: 8px;
+}
+
+.chat-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+/* Chat bubbles */
+.chat-bubble {
+  padding: 8px 12px;
+  border-radius: 16px;
+  max-width: 70%;
+  position: relative;
+  word-wrap: break-word;
+  font-size: 0.95rem;
+}
+
+/* User messages (right) */
+.user-msg {
+  justify-content: flex-end;
+}
+.user-msg .chat-bubble {
+  background-color: #dcf8c6;
+  border-top-right-radius: 0;
+}
+
+/* Bot messages (left) */
+.bot-msg {
+  justify-content: flex-start;
+}
+.bot-msg .chat-bubble {
+  background-color: #f1f0f0;
+  border-top-left-radius: 0;
+}
+
+/* System messages (centered) */
+.system-msg {
+  justify-content: center;
+}
+.system-msg .chat-bubble {
+  background-color: #ffeeba;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+/* Small time label */
+.chat-bubble small {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.7rem;
+  color: #555;
+}
