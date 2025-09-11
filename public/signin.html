@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign In - Apple & Oats</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container signin-container">
+    <div class="app-overlay">
+      <!-- Navbar -->
+      <div class="navbar-container"></div>
+
+      <main class="app-main">
+        <h1 class="page-title">Sign In</h1>
+
+        <form id="signin-form" class="form">
+          <input id="si-email" type="email" placeholder="Email" class="input" required />
+          <input id="si-password" type="password" placeholder="Password" class="input" required />
+          <button type="submit">Sign In</button>
+          <p class="small">Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </form>
+
+        <!-- Google Sign-In -->
+        <div id="g_id_onload"
+             data-client_id="64957875744-057g1qrth22vllpmvgobf4untdfhhela.apps.googleusercontent.com"
+             data-callback="handleGoogleCredential"
+             data-auto_prompt="false">
+        </div>
+        <div class="g_id_signin" data-type="standard"></div>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Apple & Oats. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="script.js"></script>
+</body>
+</html>

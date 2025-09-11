@@ -1,0 +1,41 @@
+2025-09-11 14:00:49.344 IST [77849] LOG:  starting PostgreSQL 14.19 (Homebrew) on aarch64-apple-darwin24.4.0, compiled by Apple clang version 17.0.0 (clang-1700.0.13.3), 64-bit
+2025-09-11 14:00:49.346 IST [77849] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-09-11 14:00:49.346 IST [77849] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-09-11 14:00:49.346 IST [77849] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-09-11 14:00:49.346 IST [77849] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-09-11 14:00:49.347 IST [77849] WARNING:  could not create listen socket for "localhost"
+2025-09-11 14:00:49.347 IST [77849] FATAL:  could not create any TCP/IP sockets
+2025-09-11 14:00:49.347 IST [77849] LOG:  database system is shut down
+2025-09-11 14:01:21.204 IST [78014] LOG:  starting PostgreSQL 14.19 (Homebrew) on aarch64-apple-darwin24.4.0, compiled by Apple clang version 17.0.0 (clang-1700.0.13.3), 64-bit
+2025-09-11 14:01:21.206 IST [78014] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-09-11 14:01:21.206 IST [78014] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-09-11 14:01:21.206 IST [78014] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-09-11 14:01:21.206 IST [78014] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-09-11 14:01:21.206 IST [78014] WARNING:  could not create listen socket for "localhost"
+2025-09-11 14:01:21.206 IST [78014] FATAL:  could not create any TCP/IP sockets
+2025-09-11 14:01:21.206 IST [78014] LOG:  database system is shut down
+2025-09-11 14:03:39.574 IST [78902] LOG:  starting PostgreSQL 14.19 (Homebrew) on aarch64-apple-darwin24.4.0, compiled by Apple clang version 17.0.0 (clang-1700.0.13.3), 64-bit
+2025-09-11 14:03:39.575 IST [78902] LOG:  listening on IPv6 address "::1", port 5433
+2025-09-11 14:03:39.575 IST [78902] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+2025-09-11 14:03:39.576 IST [78902] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5433"
+2025-09-11 14:03:39.579 IST [78903] LOG:  database system was shut down at 2025-09-11 14:00:33 IST
+2025-09-11 14:03:39.581 IST [78902] LOG:  database system is ready to accept connections
+2025-09-11 15:54:48.769 IST [86076] ERROR:  invalid input syntax for type integer: "null"
+2025-09-11 15:54:48.769 IST [86076] CONTEXT:  unnamed portal parameter $1 = '...'
+2025-09-11 15:54:48.769 IST [86076] STATEMENT:  SELECT * FROM chats WHERE plant_id=$1 ORDER BY created_at
+2025-09-11 15:59:39.774 IST [86535] ERROR:  duplicate key value violates unique constraint "users_email_key"
+2025-09-11 15:59:39.774 IST [86535] DETAIL:  Key (email)=(riyabasak639@gmail.com) already exists.
+2025-09-11 15:59:39.774 IST [86535] STATEMENT:  INSERT INTO users (name, email, pw, avatar)
+	       VALUES ($1, $2, $3, $4)
+	       RETURNING id, name, email, avatar
+2025-09-11 15:59:50.155 IST [86573] ERROR:  duplicate key value violates unique constraint "users_email_key"
+2025-09-11 15:59:50.155 IST [86573] DETAIL:  Key (email)=(rebelriya99@gmail.com) already exists.
+2025-09-11 15:59:50.155 IST [86573] STATEMENT:  INSERT INTO users (name, email, pw, avatar)
+	       VALUES ($1, $2, $3, $4)
+	       RETURNING id, name, email, avatar
+2025-09-11 16:21:33.501 IST [87377] ERROR:  invalid input syntax for type integer: "null"
+2025-09-11 16:21:33.501 IST [87377] CONTEXT:  unnamed portal parameter $1 = '...'
+2025-09-11 16:21:33.501 IST [87377] STATEMENT:  SELECT * FROM chats WHERE plant_id=$1 ORDER BY created_at
+2025-09-11 16:21:48.393 IST [87401] ERROR:  invalid input syntax for type integer: "null"
+2025-09-11 16:21:48.393 IST [87401] CONTEXT:  unnamed portal parameter $1 = '...'
+2025-09-11 16:21:48.393 IST [87401] STATEMENT:  SELECT * FROM chats WHERE plant_id=$1 ORDER BY created_at

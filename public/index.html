@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apple & Oats</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <div class="app-overlay">
+
+      <!-- Navbar -->
+      <div class="navbar-container"></div>
+
+      <!-- Main -->
+      <main class="app-main">
+        <header class="hero">
+          <h1>🌸 Welcome to Apple & Oats 🌸</h1>
+          <p>Your all-time destination for plants, seeds, and trees 🍃✨</p>
+        </header>
+
+        <section class="card-container" aria-label="Feature overview">
+          <div class="card">
+            <h2>📊 Dashboard</h2>
+            <p>Track your plants’ health, alerts, and progress — all in one place 🌿</p>
+            <button disabled aria-disabled="true">Sign in to Access</button>
+          </div>
+
+          <div class="card">
+            <h2>🍏 Plant Scanner</h2>
+            <p>Snap a pic & let AI identify your plant 🌱</p>
+            <a href="scanner.html" class="btn">Try Now</a>
+          </div>
+
+          <div class="card">
+            <h2>🤖 Chatbot Friend</h2>
+            <p>Get tips & plant care advice from your AI buddy 🌼</p>
+            <button disabled aria-disabled="true">Sign in to Access</button>
+          </div>
+
+          <div class="card">
+            <h2>📚 Knowledge Hub</h2>
+            <p>Learn about plant care, diseases, and prevention 🍓</p>
+            <a href="knowledge.html" class="btn">Explore</a>
+          </div>
+        </section>
+
+        <!-- CTA + Google Sign-In -->
+        <section class="cta">
+          <p>✨ Join now to unlock your personal plant health assistant! ✨</p>
+          <a href="signup.html" class="btn">Sign Up Free</a>
+
+          <!-- Google Sign-In -->
+          <div id="g_id_onload"
+               data-client_id="64957875744-057g1qrth22vllpmvgobf4untdfhhela.apps.googleusercontent.com"
+               data-callback="handleGoogleCredential"
+               data-auto_prompt="false">
+          </div>
+          <div class="g_id_signin" data-type="standard"></div>
+        </section>
+      </main>
+
+      <footer>
+        <p>© 2025 Apple & Oats. All rights reserved</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="script.js"></script>
+</body>
+</html>
